@@ -85,17 +85,25 @@ main {
     background-color: #dfdbdb;
     box-shadow: 9px 0px 20px -6px #5a5a5a;
     flex-grow: 2;
-    height: 150vh;
+    height: 100vh;
+    overflow-y: scroll;
+    scrollbar-width: none; /* Firefox compatibility */
+    -ms-overflow-style: none; /* IE 10+ */
+}
+
+main::-webkit-scrollbar { /* WebKit */
+    width: 0;
 }
 
 .about {
     display: flex;
+    flex-shrink: 0;
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
     height: 50vh;
     max-height: 600px;
-    min-height: 300px;
+    min-height: 350px;
     background-image: url(images/aboutme1.jpg);
     background-size: cover;
 }
@@ -119,6 +127,7 @@ main {
 
 .projects {
     display: flex;
+    flex-shrink: 0;
     flex-direction: row;
     height: 50vh;
     background: blue;
@@ -126,6 +135,7 @@ main {
 
 .contact {
     display: flex;
+    flex-shrink: 0;
     flex-direction: row;
     height: 50vh;
     background: red;
