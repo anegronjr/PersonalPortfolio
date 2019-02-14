@@ -5,14 +5,21 @@
     font-family: 'Ubuntu';
 }
 
+body {
+    background: white;
+}
+
 .container {
     display: flex;
     flex-flow: row nowrap;
     height: 100%;
+    max-width: 2000px;
+    margin: 0px auto;
 }
 
 aside {
-    background-color: #fbfbfb;
+    background-color: #fff;
+    box-shadow: -2px 0px 20px 0px #5a5a5a;
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-between;
@@ -28,16 +35,15 @@ aside {
     margin-bottom: 5px;
 }
 
-nav {
-    
-}
 nav li {
+    list-style: none;
     text-align: right;
     padding-right: 1rem;
     margin-bottom: 0.5rem;
 }
 
 nav a {
+    position: relative;
     text-decoration: none;
     color: #525250;
     font-weight: bolder;
@@ -45,8 +51,27 @@ nav a {
 
 nav a:hover {
     color: #bbd7e9;
+    margin-right: 5px;
+    transition: margin .3s ease;
 }
 
+/*nav a:after {
+    position: absolute;
+    content: '';
+    display: block;
+    width: 0; height: 0.1rem;
+    margin-top: 2px;
+    right: 0;
+    background: #000;
+    transition: width .3s ease;
+}
+
+nav a:hover:after {
+    width: 100%;
+    right: 0;
+    background: #000;
+}
+*/
 .aside-invis {
     text-align: center;
     font-family: 'Ubuntu';
@@ -55,6 +80,53 @@ nav a:hover {
 }
 
 main {
+    display: flex;
+    flex-direction: column;
     background-color: #dfdbdb;
+    box-shadow: 9px 0px 20px -6px #5a5a5a;
     flex-grow: 2;
+    height: 150vh;
+}
+
+.about {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    height: 50vh;
+    max-height: 600px;
+    min-height: 300px;
+    background-image: url(images/aboutme1.jpg);
+    background-size: cover;
+}
+
+.about-blurb {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 40%;
+    margin-right: 10vw;
+}
+
+.about-blurb h2 {
+    font-size: 4vw;
+    margin-bottom: 2vw;
+}
+
+.about-blurb p {
+    font-size: 2vw;
+    align-self: flex-end;
+}
+
+.projects {
+    display: flex;
+    flex-direction: row;
+    height: 50vh;
+    background: blue;
+}
+
+.contact {
+    display: flex;
+    flex-direction: row;
+    height: 50vh;
+    background: red;
 }
